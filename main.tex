@@ -1,0 +1,102 @@
+\documentclass[12pt, dvipdfmx,autodetect-engine]{jsarticle}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{listings, settings/jlistings}
+\usepackage{pdfpages}
+\usepackage{color}
+\usepackage{here}
+\usepackage{bm}			% ベクトル太字(\bm{A}) or \mathbf
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\mathtoolsset{showonlyrefs=true}
+
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+
+\renewcommand{\lstlistingname}{ソースコード}
+\makeatletter
+\newcommand{\subsubsubsection}{\@startsection{paragraph}{4}{\z@}%
+  {1.0\Cvs \@plus.5\Cdp \@minus.2\Cdp}%
+  {.1\Cvs \@plus.3\Cdp}%
+  {\reset@font\sffamily\normalsize}
+}
+\makeatother
+\setcounter{secnumdepth}{4}
+
+\begin{document}
+% % 12ppで固定
+% \large
+% 表紙をfrontpage.pdfにしてプロジェクトに入れておけばOK
+\includepdf[]{frontpage.pdf}
+
+\section{目的}
+\section{実行環境}
+\section{原理}
+\subsection{サブセクション}
+\section{実験内容}
+\section{実験結果}
+\section{考察}
+\newpage
+\section{テンプレート集}
+%mathjax使えるの偉い
+$D$個の特徴量を用いた$D$次元のベクトル$x$を以下のように表す。
+% 数式
+\begin{equation}
+	\mathbf{x} = (x_1, x_2, ..., x_D)^T \notag
+\end{equation}
+\begin{itemize}
+    \item 実行OS：Windows 10
+    \item データ変換用言語: Python 3.8.5
+    \item データ変換用ライブラリ: pandas 1.1.3
+\end{itemize}
+図\ref{fig:model}で図番号自動指定できる
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=8cm]{fig/takane.png}
+	\caption{(図題)貴音さんはいいぞ}
+	\label{fig:model}
+\end{figure}
+% ソースコード
+\lstinputlisting [caption=ソースコード, label=adder]{code.py}
+\begin{table}[H]
+	\caption{表題}
+	\label{table:car_data}
+	\centering
+	\begin{tabular}{|l|c|r|}
+		\hline
+		左寄せ&		中央寄せ&		右寄せ\\ \hline\hline
+		aaaa  &		bbbbb &     ccccc	\\ \hline
+		AtCoder  &		 Codeforces     &	topcoder 		\\ \hline
+	\end{tabular}
+\end{table}
+\newpage
+% 参考文献
+\begin{thebibliography}{7}
+    \bibitem{sankou01} Erich Gamma, Richard Helm, Ralph Johnson, and John Vlisside, "Design Patterns: Elements of Reusable Object-Oriented Software," Addison-Wesley, 1994.
+	\bibitem{sankou02} Geoffrey Hinton and Sam Roweis, "Stochastic Neighbor Embedding," Advances in Neural Information Processing Systems, Vol. 15, pp. 833840, 2002.
+	\bibitem{sankou03} Laurans van der Maaten and Geoffrey Hinton, "Visualizing Data using t-SNE," Journal of Machine Learning Research, Vol. 9, pp. 25792605, 2008.
+	\bibitem{sankou04} John W. Sammon, JR., "A Nonlinear Mapping for Data Structure Analysis," IEEE Transactions on Computers, Vol. C-18, No. 5, pp. 401409, 1969.
+	\bibitem{sankou05} Joshua B. Tanenbaum, Vin de Silva, and John C. Langford, "A Global Geometric Framework for Nonlinear Dimensionality Reduction," Science, Vol. 290, pp. 23192323, 2000.
+	\bibitem{sankou06} Warren S. Torgerson, "Multidimensional Scaling: I. Theory and Method," Psychometrika, Vol. 17, pp. 401419, 1952.
+	\bibitem{sankou07} Jarkko Venna and Samuel Kaski, "Local multidimensional scaling," Neural Networks, Vol.19, pp. 889899, 2006.
+	\bibitem{sankou08}  『Java言語で学ぶ デザインパターン入門』(結城浩 ソフトバンクパブリッシング株式会社出版 2001年)
+	\bibitem{sankou09} Car evaluation Data Set, UCI Machine Learning Repository (URL: https://archive.ics.uci.edu/ml/datasets/Car+Evaluation) 2020年1月30日
+\end{thebibliography}
+
+
+\end{document}
